@@ -72,7 +72,7 @@
         //}
 
 
-        function addIntegers(a,b)
+        /*function addIntegers(a,b)
         {
             if ( typeof a !== Number)
             {
@@ -88,7 +88,75 @@
 
         console.log(addIntegers("1", 3));
         console.log(addIntegers("apple", 2));
+        */
         
+        /*
+        var product = {
+            _price: 0,
+
+            set price(value)
+            {
+                if (value < 0) {
+                    throw new Error('price cannot be less than zero');
+                    this._price = value;
+                }
+            },
+
+            get price() {
+                return this._price;
+            }
+        };
+        */
+
+        // Javascript objects with Get and Set methods
+        var customer = {
+            _firstName: 0,
+            _lastName: 0,
+
+            set firstName(value) {
+                if (value === "") {
+                    throw new Error('First name cannot be empty');
+                }
+                this._firstName = value;
+            },
+
+            get firstName() {
+                return this._firstName;
+            },
+
+            set lastName(value)
+            {
+                if (value === "") {
+                    throw new Error('Last name cannot be empty;')
+                }
+                this._lastName = value;
+            },
+
+            get lastName()
+            {
+                return this._lastName;
+            }
+
+        };
+
+        // Dump All
+        function DumpAll(object)
+        {
+            for (var i in object) {
+                alert(i+" = " + object[i]);
+            }
+        }
+
+
+        var cart = [
+            { name: 'Milk', price: 23.44 },
+
+            { name: 'Cheese', price: 3.50 },
+
+            { name: 'Peanuts', price: 8.00 },
+
+            { name: 'Wine', price: 7.50 }
+        ];
 
 
 
