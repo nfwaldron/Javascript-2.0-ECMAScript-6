@@ -19,18 +19,15 @@
         var buttons = document.getElementsByTagName('button');
         addClickHandlers(buttons);
 
-        function addClickHandlers(buttons)
-        {
-            for (var i = 0; i < buttons.length; i++)
-            {
+        function addClickHandlers(buttons) {
+            for (var i = 0; i < buttons.length; i++) {
                 buttons[i].addEventListener('click', function () {
                     alert('You clicked button ' + i);
                 });
             }
         }
 
-        function outerFunction()
-        {
+        function outerFunction() {
             // A is not defined within innerFunction
             var a = "Hello";
 
