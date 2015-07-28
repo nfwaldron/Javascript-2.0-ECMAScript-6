@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lots of Buttons!</title>
+</head>
+<body>
+    <button>Click Me!</button>
+    <button>Click Me!</button>
+    <button>Click Me!</button>
+    <button>Click Me!</button>
+    <button>Click Me!</button>
+    <button>Click Me!</button>
+    <button>Click Me!</button>
+
+    <script>
+
+        'use strict';
+
+        var buttons = document.getElementsByTagName('button');
+        addClickHandlers(buttons);
+
+        function addClickHandlers(buttons)
+        {
+            for (var i = 0; i < buttons.length; i++)
+            {
+                buttons[i].addEventListener('click', function () {
+                    alert('You clicked button ' + i);
+                });
+            }
+        }
+
+        function outerFunction()
+        {
+            // A is not defined within innerFunction
+            var a = "Hello";
+
+            var innerFunction = function (b) {
+                // Inside the innerFunction(), 'a' is not defined. Javascript will go up the scope chains
+                // to outerFunction() in order to find a variable with a result
+                console.log(a + b + c);
+            }
+
+            return innerFunction;
+        }
+
+        // You create a closure whenever you have an inner function that has dependencies on an outer function.
+        // You would expect the outerFunction to die, however, since innerFunction needs to go to outerFunction in order
+        // to get the value of a...outerFunction never dies.
+
+        var funct = outerFunction();
+
+        funct(' blah');
+
+    </script>
+
+</body>
+</html>
