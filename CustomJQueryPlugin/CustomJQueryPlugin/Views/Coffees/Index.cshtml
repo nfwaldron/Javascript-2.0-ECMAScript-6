@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form>
+    <input id="coffee" />
+
+
+@section scripts{
+    <script>
+        $("#coffee").autocomplete({
+            source: '/api/coffees/find',
+            minLength: 1
+        });
+    </script>
+
+</form>
+}
