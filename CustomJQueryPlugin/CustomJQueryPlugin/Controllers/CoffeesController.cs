@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomJQueryPlugin.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,9 +16,18 @@ namespace CustomJQueryPlugin.Controllers
         }
 
         // GET: Cofees/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            return View();
+            var coffees = new List<Coffee>
+            {
+                new Coffee{Id=1, Type="Latte"},
+                new Coffee{Id=2, Type="Large Mocha"},
+                new Coffee{Id=3, Type="Lemon Tea"},
+                new Coffee{Id=4, Type="Lemonade"},
+                new Coffee{Id=5, Type="LesTwins"}
+            };
+
+            return View(coffees);
         }
 
         // GET: Cofees/Create

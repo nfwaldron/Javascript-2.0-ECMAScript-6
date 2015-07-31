@@ -29,5 +29,11 @@ namespace CustomJQueryPlugin.API
 
             return matches;
         }
+
+        [HttpPost]
+        public Boolean SaveOrder(int[] order)
+        {
+            return true;
+        }
     }
 }
